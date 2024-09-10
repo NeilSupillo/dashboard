@@ -26,6 +26,8 @@ class PreboardingAttendanceController extends Controller
         ]);
 
         PreboardingAttendance::create($attributes);
+
+        return response()->json(['message' => 'New intern added successfully!']);
         
     }
 
@@ -33,7 +35,7 @@ class PreboardingAttendanceController extends Controller
 
         $response = PreboardingAttendance::get();
 
-        return json_encode(['data' => $response]);
+        return response()->json(['data' => $response]);
 
     }
 
