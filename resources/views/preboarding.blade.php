@@ -1,6 +1,6 @@
 @extends('layout.dashboard_layout')
 
-@section('title', 'Page Name')
+@section('title', 'Preboarding')
 
 @section('JS/CSS')
 {{-- JS / CSS vite here --}}

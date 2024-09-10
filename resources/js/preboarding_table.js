@@ -4,7 +4,6 @@ $(document).ready(function() {
  let table = new DataTable('#preboarding_table', {
     serverSide: true,
     processing: true,
-    responsive: true,
     ajax: {
         url: 'api/get_preboarding_data',
         type: 'GET'
