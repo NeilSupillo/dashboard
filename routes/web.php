@@ -22,7 +22,7 @@ Route::controller(PreboardingAttendanceController::class)->group(function () {
 });
 
 Route::controller(UserController::class)->group(function() {
-    Route::post('api/register', 'create_user')->name('register');
+    Route::post('api/add_user', 'store')->name('add_user')->middleware('admin');
     Route::post('api/login_custom', 'login_user_custom')->name('login_custom');
     Route::post('api/login', 'login')->name('login');
 });

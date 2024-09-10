@@ -29,6 +29,7 @@ class UserController extends Controller
         return json_encode(['success' => true, 'message' => "A new account has been successfully created!"]);
     }
     
+    // Testing purposes - ignore for now.
     public function create_user(Request $request){
         $attributes = $request->validate([
             'name' => 'required',
@@ -65,6 +66,8 @@ class UserController extends Controller
         }
     }
 
+    
+    // Testing purposes, ignore for now.
     public function login_user_custom(Request $request){
         $request->validate([
             'email' => 'required',
