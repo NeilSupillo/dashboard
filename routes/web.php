@@ -5,7 +5,7 @@ use App\Http\Controllers\PreboardingAttendanceController;
 use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('preboarding');
 });
 
 Route::get('/login', function () {
