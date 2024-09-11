@@ -40,17 +40,19 @@ window.register = () => {
     console.log('Request made.');
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
-    let name = "Random Name"
+    let name = "Random Name";
+    let account_type = 'Admin';
     console.log(username);
     console.log(password);
 
     $.ajax({
-        url: 'api/register',
+        url: 'api/add_user',
         type: 'POST',
         data: {
             'name' : name,
             'email' : username,
-            'password' : password
+            'password' : password,
+            'account_type': account_type,
         },
         success:function(response){
             let response_test = response;

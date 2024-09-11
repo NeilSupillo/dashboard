@@ -6,7 +6,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('preboarding');
-});
+}); 
 
 Route::get('/login', function () {
     return view('login_test');
@@ -22,7 +22,7 @@ Route::controller(PreboardingAttendanceController::class)->group(function () {
 });
 
 Route::controller(UserController::class)->group(function() {
-    Route::post('api/add_user', 'store')->name('add_user')->middleware('admin');
+    Route::post('api/add_user', 'store')->name('add_user');
     Route::post('api/login_custom', 'login_user_custom')->name('login_custom');
     Route::post('api/login', 'login')->name('login');
 });

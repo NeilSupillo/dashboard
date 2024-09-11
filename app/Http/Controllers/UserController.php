@@ -19,14 +19,14 @@ class UserController extends Controller
     public function store(Request $request){
         $attributes = $request->validate([
             'name' => 'required|min:4',
-            'email' => 'required|email|min:10|unique:users, email',
+            'email' => 'required|email|min:10|unique:users,email',
             'password' => 'required|min:6',
-            'account_type' => 'required|in:Onboarding, Admin',
+            'account_type' => 'required|in:Onboarding,Admin',
         ]);
 
         User::create($attributes);
 
-        return json_encode(['success' => true, 'message' => "A new account has been successfully created!"]);
+        return response()->json(['success' => true, 'message' => "A new account has been successfully created!"]);
     }
     
     // Testing purposes - ignore for now.
