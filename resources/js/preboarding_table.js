@@ -5,7 +5,7 @@ $(document).ready(function() {
     serverSide: true,
     processing: true,
     ajax: {
-        url: 'api/get_preboarding_data',
+        url: 'api/get_preboarding',
         type: 'GET'
     },
     columns: [

@@ -17,8 +17,9 @@ Route::get('/register', function () {
 });
 
 Route::controller(PreboardingAttendanceController::class)->group(function () {
-    Route::get('api/get_preboarding_data', 'index_datatable')->name('get_preboarding');
-    Route::post('api/store_preboarding_data', 'store')->name('store_preboarding');
+    Route::get('api/get_preboarding', 'index_datatable')->name('get_preboarding');
+    Route::post('api/store_preboarding', 'store')->name('store_preboarding');
+    Route::put('api/update_preboarding', 'update')->name('update_preboarding');
 });
 
 Route::controller(UserController::class)->group(function() {
