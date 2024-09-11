@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PreboardingAttendance extends Model
 {
+    use HasFactory;
+    
     protected $table = 'preboarding_attendance';
     protected $primaryKey = "app_id";
     public $timestamps = false;
