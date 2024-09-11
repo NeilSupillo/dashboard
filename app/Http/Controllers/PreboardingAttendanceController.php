@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 use App\Models\PreboardingAttendance;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class PreboardingAttendanceController extends Controller
 {
@@ -58,9 +59,18 @@ class PreboardingAttendanceController extends Controller
 
         $user_id = $request->input('id');
 
-        PreboardingAttendance::where('id', $user_id)->update($attributes);
+        try {
+            $model = PreboardingAttendance::findorFail($user_id);
 
-        return response()->json(['message' => 'Intern data updated.']);
+            $model->update($attributes);
+
+            return response()->json(['message' => 'Intern data updated.']);
+        }
+        catch (ModelNotFoundException $e) {
+            return response()->json(['error' => 'You are trying to update data that does not exist.']);
+        }
+
+        
     }
 
     public function index_datatable(Request $request){
