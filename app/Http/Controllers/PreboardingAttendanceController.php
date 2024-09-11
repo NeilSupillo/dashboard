@@ -39,6 +39,30 @@ class PreboardingAttendanceController extends Controller
 
     }
 
+    public function update(Request $request){
+        $attributes = $request->validate([
+            'name' => 'required',
+            'email_address' => 'required',
+            'intern_type' => 'required',
+            'phone_number' => 'required',
+            'facebook_link' => 'required',
+            'course' => 'required',
+            'school_name' => 'required',
+            'school_contact' => 'required',
+            'hours_requirement' => 'required',
+            'discord_username' => 'required',
+            'orientation_date' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+        ]);
+
+        $user_id = $request->input('id');
+
+        PreboardingAttendance::where('id', $user_id)->update($attributes);
+
+        return response()->json(['message' => 'Intern data updated.']);
+    }
+
     public function index_datatable(Request $request){
 
         $query = PreboardingAttendance::query();
