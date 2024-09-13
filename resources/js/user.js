@@ -8,6 +8,29 @@ $(document).ready(function() {
     console.log('User Load confirmation')
    });
 
+window.update_test = () => {
+    $.ajax({
+        url: 'api/update_password',
+        type: 'POST',
+        data: {
+            'old_password': 'newpass',
+            'new_password': 'password',
+            'new_password_confirmation': 'password'
+        },
+        success:function(response){
+            console.log(response);
+        },
+        error:function (code, status, error){
+            console.log(code);
+            console.log(status);
+            console.log(error);
+            var errors = code.responseJSON.errors;
+            console.log(errors);
+
+        }
+    });
+}
+
 window.login = () => {
     console.log('Request made.');
     let username = document.getElementById('username').value;
@@ -24,6 +47,11 @@ window.login = () => {
         },
         success:function(response){
             console.log(response);
+            if (response.status === 'success'){ 
+                console.log('trigger test');
+                window.location.href = response.redirect;
+            }
+            
         },
         error:function (code, status, error){
             console.log(code);
