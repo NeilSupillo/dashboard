@@ -222,26 +222,27 @@
         <div class="self-stretch flex-col justify-start items-end gap-6 flex">
             <div id="closeButton"
                 class="w-[39px] h-[39px] bg-white rounded-full shadow border border-[#e6e6e6] cursor-pointer flex items-center justify-center">
-                <img src="./img/uip-icons/sideBar-close.png" alt="close">
+                <img src="{{ asset('img/uip-icons/sideBar-close.png') }}" alt="close">
+
             </div>
 
             <div class="self-stretch flex-col justify-start items-center gap-[47px] flex">
-                <img id="sidebarLogo" class="w-[87px] h-[88px]" src="./img/uip-icons/UIP_solidA.png" alt="Logo" />
+                <img id="sidebarLogo" class="w-[87px] h-[88px]" src="{{ asset('img/uip-icons/UIP_solidA.png') }}" alt="Logo" />
                 <div class="self-stretch border border-[#d0d5dd]"></div>
                 <div id="sidebarLinks" class="self-stretch flex-col justify-start items-start gap-[30px] flex">
                     <a href="#"
                         class="sidebar-link flex items-center gap-2 w-full px-4 py-2 bg-white rounded text-[#5041bc] text-base font-semibold border border-transparent hover:border-white">
-                        <img src="./img/uip-icons/preboard.png" alt="Preboarding" class="w-5 h-5 mr-3">
+                        <img src="{{ asset('img/uip-icons/preboard.png') }}" alt="Preboarding" class="w-5 h-5 mr-3">
                         <span class="sidebarText">Pre-Boarding</span>
                     </a>
                     <a href="./offboard.php"
                         class="sidebar-link flex items-center gap-2 w-full px-4 py-2 text-white rounded text-base font-semibold border border-transparent hover:border-white">
-                        <img src="./img/uip-icons/offboard.png" alt="Offboarding" class="w-5 h-5 mr-3 text-blue-800">
+                        <img src="{{ asset('img/uip-icons/offboard.png') }}" alt="Offboarding" class="w-5 h-5 mr-3 text-blue-800">
                         <span class="sidebarText">Off-Boarding</span>
                     </a>
                     <a href="./account.php"
                         class="sidebar-link flex items-center gap-2 w-full px-3 py-2 text-white rounded text-base font-semibold border border-transparent hover:border-white">
-                        <img src="./img/uip-icons/account.png" alt="Account Page" class="w-7 h-7 mr-2">
+                        <img src="{{ asset('img/uip-icons/account.png') }}" alt="Account Page" class="w-7 h-7 mr-2">
                         <span class="sidebarText">Account Page</span>
                     </a>
                 </div>
@@ -258,7 +259,7 @@
             </div>
             <a href="./login.html"
                 class="self-stretch h-[34px] bg-white text-center text-[#5041bc] text-base font-semibold flex justify-center items-center rounded border border-transparent hover:border-white">
-                <img src="./img/uip-icons/logout.png" alt="Logout" class="w-5 h-5 mr-5">
+                <img src="{{ asset('img/uip-icons/logout.png') }}" alt="Logout" class="w-5 h-5 mr-5">
                 <span class="sidebarText">Log out</span>
             </a>
         </div>
@@ -270,22 +271,22 @@
             <div class="flex flex-col items-center gap-[100px]">
                 <div id="openButton"
                     class="w-[39px] h-[39px] bg-white rounded-full shadow border border-[#e6e6e6] cursor-pointer flex items-center justify-center">
-                    <img src="./img/uip-icons/sideBar-open.png" alt="Open">
+                    <img src="{{ asset('img/uip-icons/sideBar-open.png') }}" alt="Open">
                 </div>
-                <img id="sidebarLogoMinimized" class="w-[50px] h-[50px]" src="./img/uip-icons/UIP_solidA.png"
+                <img id="sidebarLogoMinimized" class="w-[50px] h-[50px]" src="{{ asset('img/img/uip-icons/UIP_solidA.png') }}"
                     alt="Logo" />
                 <div id="sidebarLinksMinimized" class="flex flex-col items-center gap-[20px]">
                     <a href="#preboarding"
                         class="flex items-center justify-center w-[50px] h-[50px] bg-white rounded-full border border-transparent hover:border-white">
-                        <img src="./img/uip-icons/preboard.png" alt="Preboarding" class="w-[20px] h-[20px]">
+                        <img src="{{ asset('img/img/uip-icons/preboard.png') }}" alt="Preboarding" class="w-[20px] h-[20px]">
                     </a>
                     <a href="#offboarding"
                         class="flex items-center justify-center w-[50px] h-[50px] rounded-full border border-transparent hover:border-white">
-                        <img src="./img/uip-icons/offboard.png" alt="Offboarding" class="w-[20px] h-[20px]">
+                        <img src="{{ asset('img/uip-icons/offboard.png') }}"  alt="Offboarding" class="w-[20px] h-[20px]">
                     </a>
                     <a href="#account"
                         class="flex items-center justify-center w-[50px] h-[50px] rounded-full border border-transparent hover:border-white">
-                        <img src="./img/uip-icons/account.png" alt="Account Page" class="w-[40px] h-[40px]">
+                        <img src="{{ asset('img/uip-icons/account.png') }}" alt="Account Page" class="w-[40px] h-[40px]">
                     </a>
                 </div>
             </div>
@@ -295,7 +296,7 @@
                 </div>
                 <a href="./login.html"
                     class="flex justify-center items-center w-[50px] h-[50px] bg-white text-center text-[#5041bc] rounded-full border border-transparent hover:border-white">
-                    <img src="./img/uip-icons/logout.png" alt="Logout" class="w-5 h-5">
+                    <img src="{{ asset('img/uip-icons/logout.png') }}" alt="Logout" class="w-5 h-5">
                 </a>
             </div>
         </div>
@@ -393,7 +394,7 @@
                 <h1 class="text-2xl md:text-3xl">Pre-Boarding</h1>
                 <button id="addInternBtn"
                     class="bg-[#624DE3] text-white px-4 py-1 rounded-lg flex items-center gap-2 hover:bg-[#1d1a4f]">
-                    <img src="./img/uip-icons/add.png" alt="Add Intern" class="w-5 h-5">
+                    <img src="{{ asset('img/uip-icons/add.png') }}" alt="Add Intern" class="w-5 h-5">
                     <span class="hidden md:inline">Add Intern</span>
                 </button>
             </div>
@@ -403,7 +404,7 @@
                     <input id="customSearch" type="text" placeholder="Search..."
                         class="w-full h-[45px] sm:h-[50px] pl-4 pr-10 rounded-full bg-[#F5F3FF] text-black focus:outline-none" />
                     <button id="searchBtn" class="absolute right-2 top-1/2 transform -translate-y-1/2">
-                        <img src="./img/uip-icons/search.png" alt="Search" class="w-5 h-5">
+                        <img src="{{ asset('img/uip-icons/search.png') }}" alt="Search" class="w-5 h-5">
                     </button>
                 </div>
             </div>
@@ -612,19 +613,22 @@
 
 
 
-                                    // Inside the PHP while loop where the buttons are generated
-                                    echo "<td class='px-6 py-4 whitespace-nowrap text-center'>
+// Get the base URL for the application
+$baseUrl = url('/');
+
+// Inside the PHP while loop where the buttons are generated
+echo "<td class='px-6 py-4 whitespace-nowrap text-center'>
         <button class='w-5 rounded' data-delete-id='" . $row["app_id"] . "'>
-            <img src='./img/uip-icons/delete.png' alt='delete'/>
+            <img src='" . $baseUrl . "/img/uip-icons/delete.png' alt='delete'/>
         </button>
     </td>";
 
-                                    // Edit Button
-                                    echo "<td class='px-6 py-4 whitespace-nowrap text-center'>
-                                            <button class='w-5 rounded' data-id='" . $row["app_id"] . "'>
-                                                <img src='./img/uip-icons/edit.png' alt='edit'/>
-                                            </button>
-                                        </td>";
+// Edit Button
+echo "<td class='px-6 py-4 whitespace-nowrap text-center'>
+        <button class='w-5 rounded' data-id='" . $row["app_id"] . "'>
+            <img src='" . $baseUrl . "/img/uip-icons/edit.png' alt='edit'/>
+        </button>
+    </td>";
 
                                     echo "</tr>";
                                     $rowIndex++;
