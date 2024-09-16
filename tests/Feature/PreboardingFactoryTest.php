@@ -1,7 +1,7 @@
 <?php
-
 use App\Models\PreboardingAttendance;
 
-test('preboarding_seeding', function () {
-    $preboarding = PreboardingAttendance::factory()->count(40)->create();
+test('Preboarding Seed', function () {
+    $preboarding = PreboardingAttendance::factory()->count(10)->create();
 });
+
