@@ -39,9 +39,9 @@ class PreboardingAttendanceFactory extends Factory
             'school_contact'=>fake()->phoneNumber(),
             'hours_requirement'=>fake()->randomNumber(3, true),
             'discord_username'=>fake()->word(),
-            'orientation_date'=>fake()->date('Y_m_d'),
-            'start_date'=>fake()->date('Y_m_d'),
-            'end_date'=>fake()->date('Y_m_d'),
+            'orientation_date'=>fake()->date(),
+            'start_date'=>fake()->date(),
+            'end_date'=>fake()->date(),
             'status'=>fake()->randomElement($status),
         ];
     }

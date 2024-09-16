@@ -27,7 +27,7 @@ return new class extends Migration
             $table->date('orientation_date');
             $table->date('start_date');
             $table->date('end_date');
-            $table->string('status');
+            $table->string('status')->default('Pending');
 
             $table->primary('app_id');
         });

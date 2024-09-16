@@ -28,7 +28,7 @@ class PreboardingAttendanceController extends Controller
 
         PreboardingAttendance::create($attributes);
 
-        return response()->json(['message' => 'New intern added successfully!']);
+        return response()->json(['status' => 'success', 'message' => 'New intern added successfully!']);
         
     }
 
@@ -40,8 +40,21 @@ class PreboardingAttendanceController extends Controller
 
     }
 
+    public function destroy(Request $request){
+        $request->validate([
+            'app_id' => 'required|exists:preboarding_attendance'
+        ]);
+
+        $id = $request->input('app_id');
+
+        PreboardingAttendance::destroy($id);
+
+        return response()->json(['status' => 'success', 'message' => 'Preboarding Data successfully deleted.']);
+    }
+
     public function update(Request $request){
         $attributes = $request->validate([
+            'app_id' => 'required|exists:preboarding_attendance',
             'name' => 'required',
             'email_address' => 'required',
             'intern_type' => 'required',
@@ -55,19 +68,34 @@ class PreboardingAttendanceController extends Controller
             'orientation_date' => 'required',
             'start_date' => 'required',
             'end_date' => 'required',
+            'status' => 'required|in:Approved,Pending'
         ]);
 
-        $user_id = $request->input('id');
+        $user_id = $request->input('app_id');
 
         try {
             $model = PreboardingAttendance::findorFail($user_id);
 
-            $model->update($attributes);
+            $model->name = $request->input('name');
+            $model->email_address = $request->input('email_address');
+            $model->intern_type = $request->input('intern_type');
+            $model->phone_number = $request->input('phone_number');
+            $model->facebook_link = $request->input('facebook_link');
+            $model->course = $request->input('course');
+            $model->school_name = $request->input('school_name');
+            $model->school_contact = $request->input('school_contact');
+            $model->hours_requirement = $request->input('hours_requirement');
+            $model->orientation_date = $request->input('orientation_date');
+            $model->start_date = $request->input('start_date');
+            $model->end_date = $request->input('end_date');
+            $model->status = $request->input('status');
+            $model->save();
 
-            return response()->json(['message' => 'Intern data updated.']);
+
+            return response()->json(['status'=> 'success', 'message' => 'Intern data updated.']);
         }
         catch (ModelNotFoundException $e) {
-            return response()->json(['error' => 'You are trying to update data that does not exist.']);
+            return response()->json(['status'=> 'error', 'message' => 'You are trying to update data that does not exist.'], 404);
         }
 
         
