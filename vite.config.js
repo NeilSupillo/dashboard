@@ -1,6 +1,5 @@
-import vue from '@vitejs/plugin-vue';
-import laravel from 'laravel-vite-plugin';
 import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
     plugins: [
@@ -11,10 +10,5 @@ export default defineConfig({
                     'resources/js/user.js'],
             refresh: true,
         }),
-        vue(),
     ],
-    build: {
-        manifest: true,
-        outDir: 'public/build',
-    },
 });
