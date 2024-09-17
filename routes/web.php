@@ -14,7 +14,22 @@ Route::get('/login', function () {
 
 Route::get('/register', function () {
     return view('register_test');
+
 });
+
+Route::get('/preboard', function () {
+    return view('dashboard.preboard');
+});
+Route::get('/offboard', function () {
+    return view('dashboard.offboard');
+});
+Route::get('/index', function () {
+    return view('dashboard.index');
+});
+Route::get('/account', function () {
+    return view('dashboard.account');
+});
+
 
 Route::get('/update', function (){
     return view('update_test');
