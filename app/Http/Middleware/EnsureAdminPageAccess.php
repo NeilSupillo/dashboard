@@ -19,7 +19,11 @@ class EnsureAdminPageAccess
         if (Auth::user()->account_type === 'Admin'){
             return $next($request);
         }
-        
-        return redirect('/');
+        else if (Auth::user()->account_type === 'Onboarding'){
+            // Preboarding redirect is placeholder until a dashboard index is made.
+            return redirect('/preboarding');
+        }
+
+        // No redirection back to index since the built in 'auth' middleware will handle it as long as it is applied to the router.
     }
 }
