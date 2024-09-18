@@ -61,7 +61,6 @@ class UserController extends Controller
         ]);
 
         $old_password = $request->input('old_password');
-        // Auth::user() will work. Currently just adding User::find as it causes some intellisense errors even if the program works.
         $user_model = User::find($request->input('id'));
 
         if (Hash::check($old_password, $user_model->password)){
