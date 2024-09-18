@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
 
-class EnsureAdminAccess
+class EnsureAdminPageAccess
 {
     /**
      * Handle an incoming request.

@@ -20,7 +20,7 @@ class UserController extends Controller
     public function store(Request $request){
         $attributes = $request->validate([
             'name' => 'required|min:4',
-            'email' => 'required|email|min:10|unique:users,email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6',
             'account_type' => 'required|in:Onboarding,Admin',
         ]);
@@ -55,13 +55,14 @@ class UserController extends Controller
 
     public function update_password(Request $request){
         $request->validate([
+            'id' => 'required|exists:users',
             'old_password' => 'required',
             'new_password' => 'required|min:6|confirmed',
         ]);
 
         $old_password = $request->input('old_password');
         // Auth::user() will work. Currently just adding User::find as it causes some intellisense errors even if the program works.
-        $user_model = User::find(Auth::user()->id);
+        $user_model = User::find($request->input('id'));
 
         if (Hash::check($old_password, $user_model->password)){
             $user_model->password = $request->input('new_password');

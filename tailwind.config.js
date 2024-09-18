@@ -5,6 +5,10 @@ export default {
     "./resources/**/*.js",
     "./resources/**/*.vue",
   ],
+  safelist: [
+    'text-orange-700',
+    'text-green-700',
+  ],
   theme: {
     extend: {},
   },

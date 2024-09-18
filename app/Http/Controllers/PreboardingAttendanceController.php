@@ -105,7 +105,21 @@ class PreboardingAttendanceController extends Controller
 
         $query = PreboardingAttendance::query();
 
-        return Datatables::of($query)->make(true);
+        return Datatables::of($query)
+                            ->editColumn('status', function(PreboardingAttendance $preboarding) {
+                                return $preboarding->status;
+                                if ($preboarding->status == 'Pending'){
+                                    return "<p class='text-orange-700 font-semibold'>" . $preboarding->status . "</p>";
+                                }
+                                else if ($preboarding->status == 'Approved'){
+                                    return "<p class='text-green-700'>" . $preboarding->status . "</p>";
+                                }
+                            })
+                            ->addColumn('actions', function(PreboardingAttendance $preboarding){
+                                return "<button type='button' onclick=delete_attendance(this) class='edit-btn' data-id='". $preboarding->app_id."'>Delete</button>";
+                            })
+                            ->rawColumns(['status', 'actions'])
+                            ->make(true);
 
     }
 }

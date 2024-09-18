@@ -11,7 +11,6 @@
     <script src="https://cdn.datatables.net/2.1.5/js/dataTables.js"></script>
 </head>
 <body>
-    <p class="font-semibold text-lg">Test</p>
     <table id="preboarding_table" class="display">
         <thead>
             <tr>
@@ -30,6 +29,7 @@
                 <th>Start Date</th>
                 <th>Tentative End Date</th>
                 <th>Status</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>

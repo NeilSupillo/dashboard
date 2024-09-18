@@ -1,5 +1,15 @@
 import DataTable from "datatables.net-dt";
 
+window.delete_attendance = (button) => {
+    let app_id = button.getAttribute('data-id');
+    console.log('Trigger delete for', app_id);
+}
+
+// window.edit_attendance = () => {
+//     let app_id = $(this).data('id');
+//     console.log('Trigger edit for', app_id);
+// }
+
 $(document).ready(function() {
  let table = new DataTable('#preboarding_table', {
     serverSide: true,
@@ -24,7 +34,9 @@ $(document).ready(function() {
         { data: 'start_date' },
         { data: 'end_date' },
         { data: 'status' },
+        { data: 'actions', orderable:false, searchable:false }
     ]   
 
+    
  })
 });
